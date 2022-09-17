@@ -3,7 +3,6 @@ from django.contrib import admin
 from courses import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', views.CourseAPIView.as_view(), name='courses_list'),
     path('<int:pk>/', views.CourseDetailAPIView.as_view(), name='courses_detail'),
 ]
