@@ -28,4 +28,4 @@ class CourseDetailAPIView(APIView):
     def delete(self, request, pk):
         course = Course.objects.get(pk=pk)
         course.delete()
-        return Response({"message": "item has been deleted"})
+        return Response(status=status.HTTP_204_NO_CONTENT)

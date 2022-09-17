@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Category(models.Model):
@@ -17,6 +18,9 @@ class Course(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_url(self):
+        return reverse("courses_detail", kwargs={"pk": self.pk})
 
 
 class Branch(models.Model):
